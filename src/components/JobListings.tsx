@@ -19,26 +19,26 @@ export const JobListings = () => {
     queryFn: fetchJobs,
   });
 
-  if (isLoading) return <div>Loading jobs...</div>;
-  if (error) return <div>Error loading jobs</div>;
+  if (isLoading) return <div className="text-center">Loading jobs...</div>;
+  if (error) return <div className="text-center text-red-500">Error loading jobs</div>;
 
   return (
-    <div>
-      <div className="mb-4 relative">
+    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+      <div className="mb-6 relative">
         <input
           type="text"
           placeholder="Search jobs..."
-          className="w-full p-2 pl-10 border border-gray-300 rounded"
+          className="w-full p-3 pl-10 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100"
         />
-        <Search className="absolute left-3 top-2.5 text-gray-400" size={20} />
+        <Search className="absolute left-3 top-3.5 text-gray-400" size={20} />
       </div>
-      <div className="space-y-4">
+      <div className="space-y-6">
         {jobs?.map(job => (
-          <div key={job.id} className="bg-white p-4 rounded shadow">
-            <h2 className="text-xl font-semibold text-[#1D72B8]">{job.title}</h2>
-            <p className="text-[#333333]">{job.company}</p>
-            <p className="text-sm text-gray-500">{job.location}</p>
-            <button className="mt-2 bg-[#F5A623] text-white px-4 py-2 rounded hover:bg-[#e69816] transition-colors">
+          <div key={job.id} className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg shadow">
+            <h2 className="text-xl font-semibold text-blue-600 dark:text-blue-400">{job.title}</h2>
+            <p className="text-gray-700 dark:text-gray-300">{job.company}</p>
+            <p className="text-sm text-gray-500 dark:text-gray-400">{job.location}</p>
+            <button className="mt-4 bg-blue-600 dark:bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors">
               Apply Now
             </button>
           </div>

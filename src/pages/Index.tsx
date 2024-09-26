@@ -7,7 +7,7 @@ const Index = () => {
   return (
     <Layout>
       <div className="container mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold text-[#333333] mb-8">Find Your Perfect Part-Time Job</h1>
+        <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-8 text-center">Find Your Perfect Part-Time Job</h1>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="md:col-span-2">
             <JobListings />
