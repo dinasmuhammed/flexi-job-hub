@@ -1,13 +1,23 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import React from 'react';
+import { Layout } from '@/components/Layout';
+import { JobListings } from '@/components/JobListings';
+import { UserProfile } from '@/components/UserProfile';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <Layout>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-4xl font-bold text-[#333333] mb-8">Find Your Perfect Part-Time Job</h1>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="md:col-span-2">
+            <JobListings />
+          </div>
+          <div>
+            <UserProfile />
+          </div>
+        </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 
